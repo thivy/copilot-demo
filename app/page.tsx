@@ -1,7 +1,5 @@
 "use client";
 
-import Button from "./demo/button";
-
 // import Button from "./demo/button";
 
 export default function Home() {
@@ -12,7 +10,6 @@ export default function Home() {
         <h1 className="text-2xl font-extrabold py-3">The Prime Numbers</h1>
         <div className="flex flex-wrap gap-4 p-10">
           {/* TODO: Insert the button here */}
-          <Button>Hello Button</Button>
         </div>
       </div>
     </main>
