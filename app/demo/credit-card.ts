@@ -6,5 +6,5 @@ export const generateRandomCreditCardNumber = () => {
 };
 
 export function generateRandomExpiryDate() {
-  return "13/28";
+  return "00/00";
 }
