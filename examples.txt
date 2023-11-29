@@ -1,0 +1,55 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. TESTNumbers.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 N                 PIC 9(4).
+       01 TEST-TABLE       PIC 9(6) OCCURS 100 TIMES.
+       01 TEST-COUNT       PIC 9(4) VALUE 0.
+
+       PROCEDURE DIVISION.
+       Display "Enter the value of N: ".
+       ACCEPT N.
+
+       PERFORM VARYING TEST-NUMBER FROM 2 BY 1
+         UNTIL TEST-COUNT = N
+         IF IS-TEST(TEST-NUMBER)
+           ADD 1 TO TEST-COUNT
+           MOVE TEST-NUMBER TO TEST-TABLE(TEST-COUNT)
+         END-IF
+       END-PERFORM.
+
+       Display "First " N " TEST numbers:".
+       PERFORM DISPLAY-TESTS VARYING INDEX FROM 1 BY 1
+         UNTIL INDEX > N
+       END-PERFORM.
+
+       STOP RUN.
+
+       IS-TEST SECTION USING NUMBER
+       IS-TEST-RETURN SECTION.
+       01 IS-TEST-FLAG        PIC X VALUE 'Y'.
+       01 DIVISOR              PIC 9(6) VALUE 2.
+       01 NUMBER               PIC 9(6).
+       01 SQUARE-ROOT          PIC 9(6).
+       01 QUOTIENT             PIC 9(6).
+
+       MOVE NUMBER TO SQUARE-ROOT.
+       COMPUTE SQUARE-ROOT = FUNCTION SQRT(SQUARE-ROOT).
+       PERFORM UNTIL DIVISOR > SQUARE-ROOT
+         IF NUMBER MOD DIVISOR = 0
+           MOVE 'N' TO IS-TEST-FLAG
+           EXIT PERFORM
+         END-IF
+         ADD 1 TO DIVISOR
+       END-PERFORM.
+
+       IF IS-TEST-FLAG = 'Y'
+         SET IS-TEST-RETURN TO TRUE
+       ELSE
+         SET IS-TEST-RETURN TO FALSE
+       END-IF.
+
+       DISPLAY-TESTS SECTION USING INDEX
+       DISPLAY-TEST-RETURN SECTION.
+       DISPLAY TEST-TABLE(INDEX).
