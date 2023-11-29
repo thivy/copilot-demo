@@ -2,9 +2,9 @@ const MAX_DIGITS = 16;
 const EXPIRE_YEAR_LENGTH = 3;
 
 export const generateRandomCreditCardNumber = () => {
-  return "";
+  return "0000 0000 0000 0000";
 };
 
 export function generateRandomExpiryDate() {
-  return "";
+  return "13/28";
 }
