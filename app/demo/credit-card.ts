@@ -29,3 +29,9 @@ export function generateRandomExpiryDate() {
 
   return `${month}/${yearFormat}`;
 }
+
+export const maskCreditCardNumber = (creditCardNumber: string) => {
+  const firstFourDigits = creditCardNumber.slice(0, 4);
+  const lastFourDigits = creditCardNumber.slice(-4);
+  return `${firstFourDigits} **** **** ${lastFourDigits}`;
+};
