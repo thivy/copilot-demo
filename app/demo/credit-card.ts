@@ -1,12 +1,21 @@
 const MAX_DIGITS = 16;
 const EXPIRE_YEAR_LENGTH = 3;
 
-// TODO: Implement the function to generate a random credit card number
 export const generateRandomCreditCardNumber = () => {
-  return "1234 5678 9012 3456";
+  // generate random number in the format 1234 1234 1234 1234
+  let ccNumber = "";
+  for (let i = 0; i < MAX_DIGITS; i++) {
+    if (i % 4 === 0 && i !== 0) {
+      ccNumber += " ";
+    }
+    ccNumber += Math.floor(Math.random() * 10);
+  }
+  return ccNumber;
 };
 
-// TODO: Implement the function to generate a random expiry date
 export function generateRandomExpiryDate() {
-  return "12/23";
+  const currentYear = new Date().getFullYear();
+  const randomYear = Math.floor(Math.random() * 10) + currentYear;
+  const randomMonth = Math.floor(Math.random() * 12) + 1;
+  return `${randomMonth}/${randomYear}`;
 }
