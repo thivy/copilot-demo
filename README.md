@@ -20,4 +20,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - Complete methods in credit-card-service.ts
 - Create a new Button component in in the `ui` folder using the Chat feature. The challenge is to ensure that the button follows the exact coding pattern as the `input` component in the `ui` folder.
-- Create new unit tests using vite in credit-card-service.test.ts
+- Create new unit tests using vite in credit-card.test.ts
