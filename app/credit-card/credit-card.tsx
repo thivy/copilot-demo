@@ -4,8 +4,8 @@ import { generateExpiryDate, getCreditCardNumber } from "./credit-card-service";
 
 export const CreditCard: FC = () => {
   return (
-    <div className="p-[1px] bg-green-50 rounded-[6px] bg-gradient-to-tr from-purple-700 via-green-500 to-purple-700">
-      <div className="bg-[url('/car-bg.png')] bg-no-repeat bg-cover min-w-[500px] flex flex-col p-8 gap-6 rounded-[5px]">
+    <div className="p-[1px] bg-green-50 rounded-lg bg-gradient-to-tr from-purple-700 via-green-500 to-purple-700">
+      <div className="bg-[url('/car-bg.png')] bg-no-repeat bg-cover min-w-[500px] flex flex-col p-8 gap-6 rounded-lg">
         <CreditCardHeader />
         <CreditCardBody />
       </div>
@@ -34,7 +34,7 @@ export const CreditCardBody = () => {
       <CreditCardNumber />
       <div className="flex justify-between items-center">
         <h2 className="text-slate-100/70 flex gap-4 font-semibold uppercase">
-          Thivy Ruthra
+          First Name
         </h2>
         <CreditCardDate />
       </div>
