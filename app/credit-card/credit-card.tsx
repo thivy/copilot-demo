@@ -1,3 +1,4 @@
+"use client";
 import { Nfc } from "lucide-react";
 import { FC } from "react";
 import { generateExpiryDate, getCreditCardNumber } from "./credit-card-service";
