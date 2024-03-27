@@ -1,15 +1,18 @@
-"use client";
 import { Nfc } from "lucide-react";
 import { FC } from "react";
+import { Form } from "../ui/form";
 import { generateExpiryDate, getCreditCardNumber } from "./credit-card-service";
 
 export const CreditCard: FC = () => {
   return (
-    <div className="p-[1px] bg-green-50 rounded-lg bg-gradient-to-tr from-purple-700 via-green-500 to-purple-700">
-      <div className="bg-[url('/car-bg.png')] bg-no-repeat bg-cover min-w-[500px] flex flex-col p-8 gap-6 rounded-lg">
-        <CreditCardHeader />
-        <CreditCardBody />
+    <div className="flex flex-col gap-4">
+      <div className="p-[1px] bg-green-50 rounded-lg bg-gradient-to-tr from-purple-700 via-green-500 to-purple-700">
+        <div className="bg-[url('/car-bg.png')] bg-no-repeat bg-cover min-w-[500px] flex flex-col p-8 gap-6 rounded-lg">
+          <CreditCardHeader />
+          <CreditCardBody />
+        </div>
       </div>
+      <Form />
     </div>
   );
 };
